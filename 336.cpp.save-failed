@@ -1,0 +1,71 @@
+/*Bismillahir Rahmanir Rahim*/
+#include<bits/stdc++.h>
+using namespace std;
+#define     ll          long long
+#define     n           1e9+7
+#define     pi          acos(-1.0)
+#define     pb          push_back
+#define     mp          make_pair
+#define     sq(a)       sqrt(a)
+#define     gt          getchar()
+#define     mod         1000000007
+#define     all(v1)     v1.begin(),v1.end()
+#define     dbg(a)      cout<< #a <<" --> "<<(a)<<endl
+ll arr[2000007],brr[200007],crr[200007];
+char att[1000],m;
+string g,h,v,x;
+map<ll,ll>mp1;
+map<ll,ll>::iterator it1;
+void bfs(ll start,vector<ll>graph[1000])
+{
+    ll a,i,j,k,l;
+    queue<ll>q1;
+    q1.push(start);
+    while(q1.empty()==0)
+    {
+        k=q1.front();
+        q1.pop();
+        ll p=graph[k].size();
+        for(i=0; i<p; i++)
+        {
+            l=graph[k][i];
+            if(mp1[l]==0)
+            {
+                mp1[l]=mp1[k]+1;
+                q1.push(l);
+            }
+        }
+    }
+}
+int main()
+{
+    ll a,b,c,d,e,f,i,j,k,l=-1,t;
+    cin>>a;
+    while(a--)
+    {
+        cin>>b>>c;
+        vector<ll>graph[1000];
+        graph[b].pb(c);
+        graph[c].pb(b);
+    }
+    while(1)
+    {
+        cin>>start>>ttl;
+        if(start==0 && ttl=0)
+            break;
+        visited.clear();
+        d=0;
+        bfs(start,graph);
+        for(it1.mp1.begin(); it1!=mp1.end(); it1++)
+        {
+            if(*it1>ttl)
+                d++;
+        }
+        cout<<"Case "<<": "<<d<<" ";
+        cout<<"nodes not reachable from node "<<start<<" with TTL = "<<ttl<<"."<<endl;
+
+
+
+    }
+
+}
